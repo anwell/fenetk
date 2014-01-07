@@ -16,9 +16,10 @@
     (swap! urls assoc id url)
     id))
 
-(defn homepage
+(en/deftemplate homepage
+  (en/xml-resource "homepage.html")
   [request]
-  (str @urls))
+  )
 
 (defn redirect
   [id]

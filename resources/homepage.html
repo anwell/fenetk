@@ -4,9 +4,14 @@
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
-		<form method="POST">
-			<input type="text"/>
+		<form method="POST" action="/shorten">
+			<input type="text" name="url"/>
 			<input type="submit" value="Shorten!"/>
 		</form>
+		<ul id="listing">
+			<li>
+				<a href="/shortenurl">id : url</a>
+			</li>
+		</ul>
 	</body>
 </html>

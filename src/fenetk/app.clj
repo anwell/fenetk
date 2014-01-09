@@ -1,7 +1,8 @@
 (ns fenetk.app
   (:use (compojure handler
                    [core :only (GET POST defroutes)]))
-  (:require [net.cgrand.enlive-html :as en]
+  (:require compojure.route
+            [net.cgrand.enlive-html :as en]
             [ring.util.response :as response]
             [ring.adapter.jetty :as jetty]))
 
@@ -19,12 +20,25 @@
 (en/deftemplate homepage
   (en/xml-resource "homepage.html")
   [request]
-  )
+  [:#listing :li] (en/clone-for [[id url] @urls]
+                                [:a] (comp
+                                       (en/content (format "%s : %s" id url))
+                                       (en/set-attr :href (str \/ id))))) 
+(defn get-domain ;TODO
+  [url]
+  (url))
 
 (defn redirect
-  [id]
-  (response/redirect (@urls id)))
+  [domain id]
+  (if (= domain (get-domain @urls id)) 
+    response/redirect (@urls id)))
 
-(defroutes app
+(defroutes app*
+  (compojure.route/resources "/")
   (GET "/" request (homepage request))
-  (GET "/:id" [id] (redirect id)))
+  (POST "/shorten" request
+        (let [id (shorten (-> request :params :url))]
+          (response/redirect "/")))
+  (GET "/:domain/:id" [domain id] (redirect domain id)))
+
+(def app (compojure.handler/site app*))

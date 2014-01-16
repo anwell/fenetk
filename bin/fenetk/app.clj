@@ -18,7 +18,7 @@
     id))
 
 (en/deftemplate homepage
-  (en/xml-resource "homepage.html")
+  (en/xml-resource "index.html")
   [request]
   [:#listing :li] (en/clone-for [[id url] @urls]
                                 [:a] (comp

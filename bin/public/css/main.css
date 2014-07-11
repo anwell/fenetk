@@ -10,6 +10,7 @@
 /* FONTS */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+@import url(http://fonts.googleapis.com/css?family=Righteous);
 
 /* OVERALL ASPECT */
 
@@ -23,7 +24,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
     
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 /* Titles */
@@ -97,7 +98,8 @@ a:after {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ffffff;
-	background-color: #74cfae;
+	background-color: 
+#d33b2d;
 }
 
 .navbar-brand {
@@ -108,7 +110,8 @@ a:after {
 
 .btn-theme {
 	color: #ffffff;
-	background-color: #74cfae;
+	background-color: 
+#d33b2d;
 	border-color: transparent;
 }
 
@@ -134,10 +137,12 @@ a:after {
 }
 
 #hello h1 {
+	font-family: "Righteous", cursive;
 	font-size: 90px;
 	font-weight: 700;
 	letter-spacing: 3px;
-	color: #74cfae;
+	color: 
+#d33b2d;
 }
 
 #hello h2 {
@@ -147,7 +152,8 @@ a:after {
 
 /* Green */
 #green {
-	background-color: #74cfae;
+	background-color: 
+#d33b2d;
 	padding-top: 50px;
 	margin-bottom: 0px;
 }
@@ -190,7 +196,8 @@ a:after {
 
 #social i {
 	font-size: 50px;
-	color: #74cfae;
+	color: 
+#d33b2d;
 }
 
 #social .col-md-3:hover {
@@ -204,7 +211,8 @@ a:after {
 /* Footer */
 #f {
 	padding-top: 20px;
-	background-color: #74cfae;
+	background-color: 
+#d33b2d;
 }
 
 #f p {

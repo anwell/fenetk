@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Bolt - Free Bootstrap 3 Theme</title>
+    <title>Fenetk - A Simple Link Shortener</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -28,35 +28,18 @@
   </head>
 
   <body>
-
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-br /and" href="#"><i class="fa fa-bolt"></i></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-
 	<div id="hello">
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-lg-8 col-lg-offset-2 centered">
-	    			<h1>Bolt Theme</h1>
-	    			<h2>FREE BOOTSTRAP THEMES</h2>
+	    			<h1>fenetk</h1>
+	    			<h2>A SIMPLE LINK SHORTENER</h2>
 	    			<form method="POST" action="/shorten" role="form">
-                        <input class="form-control" type="text" name="url"/>
+	    				<div class="input-group">
+	    					<span class="input-group-addon"><span class="glyphicon glyphicon-link"></span>
+	    					</span>
+                        	<input class="form-control" type="text" name="url" placeholder="Paste any link here"/>
+                       	</div><br />
                         <button type="submit" class="btn btn-default">Shorten</button>
                 	</form>
 	    		</div><!-- /col-lg-8 -->
@@ -86,10 +69,6 @@
 	
 	<div class="container">
 		<div class="row centered mt grid">
-			<form method="POST" action="/shorten">
-				<input type="text" name="url"/>
-				<input type="submit" value="Shorten!"/>
-			</form>
 			<ul id="listing">
 				<li>
 					<a href="/shortenurl">id : url</a>

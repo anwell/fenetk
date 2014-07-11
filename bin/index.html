@@ -7,17 +7,17 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Bolt - Free Bootstrap 3 Theme</title>
+    <title>Fenetk - A Simple Link Shortener</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/chart.js"></script>
+    <script src="js/chart.js"></script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,33 +28,20 @@
   </head>
 
   <body>
-
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-br /and" href="#"><i class="fa fa-bolt"></i></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-
 	<div id="hello">
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-lg-8 col-lg-offset-2 centered">
-	    			<h1>Bolt Theme</h1>
-	    			<h2>FREE BOOTSTRAP THEMES</h2>
+	    			<h1>fenetk</h1>
+	    			<h2>A SIMPLE LINK SHORTENER</h2>
+	    			<form method="POST" action="/shorten" role="form">
+	    				<div class="input-group">
+	    					<span class="input-group-addon"><span class="glyphicon glyphicon-link"></span>
+	    					</span>
+                        	<input class="form-control" type="text" name="url" placeholder="Paste any link here"/>
+                       	</div><br />
+                        <button type="submit" class="btn btn-default">Shorten</button>
+                	</form>
 	    		</div><!-- /col-lg-8 -->
 	    	</div><!-- /row -->
 	    </div> <!-- /container -->
@@ -64,11 +51,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
-					<img src="assets/img/iphone.png" alt="" />
+					<img src="img/iphone.png" alt="" />
 				</div>
 				
 				<div class="col-lg-7 centered">
 					<h3>WHAT WE CAN DO?</h3>
+					<ul id="listing">
+                        <li>
+                                <a href="/shortenurl">id : url</a>
+                        </li>
+                	</ul>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 			</div>
@@ -77,10 +69,6 @@
 	
 	<div class="container">
 		<div class="row centered mt grid">
-			<form method="POST" action="/shorten">
-				<input type="text" name="url"/>
-				<input type="submit" value="Shorten!"/>
-			</form>
 			<ul id="listing">
 				<li>
 					<a href="/shortenurl">id : url</a>
@@ -89,26 +77,26 @@
 			<h3>OUR LATEST WORK</h3>
 			<div class="mt"></div>
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/01.jpg" alt="" /></a>
+				<a href="#"><img src="img/01.jpg" alt="" /></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/02.jpg" alt="" /></a>
+				<a href="#"><img src="img/02.jpg" alt="" /></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/03.jpg" alt="" /></a>
+				<a href="#"><img src="img/03.jpg" alt="" /></a>
 			</div>
 		</div>
 		
 		<div class="row centered mt grid">
 			<div class="mt"></div>		
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/04.jpg" alt="" /></a>
+				<a href="#"><img src="img/04.jpg" alt="" /></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/05.jpg" alt="" /></a>
+				<a href="#"><img src="img/05.jpg" alt="" /></a>
 			</div>
 			<div class="col-lg-4">
-				<a href="#"><img src="assets/img/06.jpg" alt="" /></a>
+				<a href="#"><img src="img/06.jpg" alt="" /></a>
 			</div>
 		</div>
 		
@@ -238,6 +226,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
   </body>
 </html>

@@ -24,14 +24,10 @@
                                 [:a] (comp
                                        (en/content (format "%s : %s" id url))
                                        (en/set-attr :href (str \/ id))))) 
-(defn get-domain ;TODO
-  [url]
-  (url))
 
 (defn redirect
-  [domain id]
-  (if (= domain (get-domain @urls id)) 
-    response/redirect (@urls id)))
+  [id]
+  (response/redirect (@urls id)))
 
 (defroutes app*
   (compojure.route/resources "/")
@@ -39,6 +35,12 @@
   (POST "/shorten" request
         (let [id (shorten (-> request :params :url))]
           (response/redirect "/")))
-  (GET "/:domain/:id" [domain id] (redirect domain id)))
+  (GET "/:id" [id] (redirect id)))
 
 (def app (compojure.handler/site app*))
+
+(defn -main []
+  (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
+    (jetty/run-jetty app {:port port})))
+
+;(defonce server (jetty/run-jetty app {:port 8080 :join? false}))

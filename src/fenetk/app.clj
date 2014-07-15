@@ -19,11 +19,12 @@
 
 (en/deftemplate homepage
   (en/xml-resource "index.html")
+  [request])
+
+(en/deftemplate shortened
+  (en/xml-resource "index.html")
   [request]
-  [:#listing :li] (en/clone-for [[id url] @urls]
-                                [:a] (comp
-                                       (en/content (format "%s : %s" id url))
-                                       (en/set-attr :href (str \/ id))))) 
+  [:#link] (en/content (str "http://fene.tk/" (key (first @urls)))))
 
 (defn redirect
   [id]
@@ -32,9 +33,10 @@
 (defroutes app*
   (compojure.route/resources "/")
   (GET "/" request (homepage request))
+  (GET "/shortened" request (shortened request))
   (POST "/shorten" request
         (let [id (shorten (-> request :params :url))]
-          (response/redirect "/")))
+          (response/redirect "/shortened")))
   (GET "/:id" [id] (redirect id)))
 
 (def app (compojure.handler/site app*))
@@ -42,5 +44,3 @@
 (defn -main []
   (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
     (jetty/run-jetty app {:port port})))
-
-;(defonce server (jetty/run-jetty app {:port 8080 :join? false}))

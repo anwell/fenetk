@@ -17,8 +17,6 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="js/chart.js"></script>
-
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,6 +26,21 @@
   </head>
 
   <body>
+  	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&#215;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Here's your link!</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<code id="link"></code>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<div id="hello">
 	    <div class="container">
 	    	<div class="row">
@@ -47,7 +60,7 @@
 	    </div> <!-- /container -->
 	</div><!-- /hello -->
 	
-	<div id="green">
+	<div id="red">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
@@ -55,12 +68,7 @@
 				</div>
 				
 				<div class="col-lg-7 centered">
-					<h3>FENETK (Pronounced "phonetic")</h3>
-					<ul id="listing">
-                        <li>
-                                <a href="/shortenurl">id : url</a>
-                        </li>
-                	</ul>
+					<h3>FENETK (pronounced "phonetic")</h3>
 					<p>Fenetk is a link shortener. That's it. It was created so I could try out the Clojure programming language. Enjoy!</p>
 				</div>
 			</div>
@@ -70,7 +78,7 @@
 	<div id="f">
 		<div class="container">
 			<div class="row">
-				<p>Created by <a href="http://anwell.me">Anwell</a></p>
+				<p>Created by <a href="http://anwell.me">Anwell</a>.</p>
 			</div>
 		</div>
 	</div>
@@ -79,5 +87,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
+    <script>
+  		if (document.getElementById("link").innerHTML != "") {
+  			$('#myModal').modal('show');
+  		}
+  	</script>
   </body>
 </html>

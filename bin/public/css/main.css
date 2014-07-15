@@ -150,21 +150,21 @@ a:after {
 	font-weight: 400;
 }
 
-/* Green */
-#green {
+/* Red */
+#red {
 	background-color: 
 #d33b2d;
 	padding-top: 50px;
 	margin-bottom: 0px;
 }
 
-#green h3 {
+#red h3 {
 	color: white;
 	font-weight: 400;
 	margin-bottom: 35px;
 }
 
-#green p {
+#red p {
 	color: white;
 	font-weight: 400;
 	font-size: 20px;
